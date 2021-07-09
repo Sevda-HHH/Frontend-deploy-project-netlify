@@ -24,7 +24,7 @@ export const AppointmentsAdmin = () => {
 
     const appointments = useSelector((state: IState) => state.appoitmentReducer.data.appointments)
     const appointmentsTotal = useSelector((state: IState) => state.appoitmentReducer.data.totalCount)
-    const pageCount = appointmentsTotal != undefined && Math.ceil(appointmentsTotal / itemCount)
+    const pageCount = appointmentsTotal !== undefined && Math.ceil(appointmentsTotal / itemCount)
 
     useEffect(() => {
         if (pageCount === 1) {

@@ -21,7 +21,7 @@ export const UpdateBlogDialog: React.FC<IProps> = ({ blog, handleUpdateClose, ha
     const [updatedblog, setUpdatedblog] = useState<IBlog>(blog)
     const [picPreview, setPicPreview] = useState<any>(url + updatedblog.image)
 
-    if (blog._id != updatedblog._id) {
+    if (blog._id !== updatedblog._id) {
         setUpdatedblog(blog)
     }
 
@@ -94,7 +94,6 @@ export const UpdateBlogDialog: React.FC<IProps> = ({ blog, handleUpdateClose, ha
                             validationSchema={BlogSchema}
                             onSubmit={(values) => {
                                 const [filee] = file.current.files
-                                const oldFile = new File(["blob"], updatedblog.image, { type: "image/" })
                                 if (filee) {
                                     Object.entries(values).forEach((item: string[]) => {
                                         const [name, value] = item
